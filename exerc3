@@ -10,7 +10,7 @@ unidades compradas, segundo a tabela abaixo:
 
 <?php
 
-class Produto{
+class Prod{
   public $nome;
   public $preco;
   public $qtd;
@@ -18,7 +18,7 @@ class Produto{
   public $valor;
   
   
-  public function Produto($nome, $preco, $qtd){
+  public function Prod($nome, $preco, $qtd){
     $this->nome = $nome;
     $this->preco = $preco;
     $this->qtd = $qtd;
@@ -42,13 +42,13 @@ class Produto{
   }
 
 }
-$prod1 = new Produto("lápis", 1.00, 12);
+$prod1 = new Prod("lápis", 1.00, 12);
   print_r($prod1);
 
-$prod2 = new Produto("borracha", 0.50, 40);
+$prod2 = new Prod("borracha", 0.50, 40);
    print_r($prod2);
 
-$prod3 = new Produto("caderno", 10.00, 7);
+$prod3 = new Prod("caderno", 10.00, 7);
    print_r($prod3);
 
 ?>
