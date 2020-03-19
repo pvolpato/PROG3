@@ -20,17 +20,53 @@ empregado. -->
 class Empregado{
   public $primeironome;
   public $sobrenome;
-  public $salariomensal;
+  public $salariomen;
   
-publicfunction_construct($primeironome, $sobrenome, $salariomensal){
+public function__construct($primeironome, $sobrenome, $salariomen){
   $this->primeironome=$primeironome;
   $this->sobrenome=$sobrenome;
-  $this->salariomensal=$salariomensal;
-  
-  
-}
+  $this->salariomen=$salariomen;
 }
 
+public function setprimeironome($primeironome){
+    $this->primeironome=$primeironome;
+  }
+  
+public function setsobrenome($sobrenome){
+    $this->sobrenome=$sobrenome;
+  }
 
+public function setsalariomen($salariomen){
+    $this->salariomen=$salariomen;
+  }
+  
+public function getprimeironome(){
+  $this->primeironome;
+  }
 
+public function getsobrenome(){
+  $this->sobrenome;
+  }
+  
+public function getsalariomen(){
+  $this->salariomen;
+  }
+}
+
+$e1 = newEmpregado;
+$e1->setprimeironome("Maria");
+$e1->setsobrenome("Y");
+$e1->setsalariomen(1000,00);
+
+$e2 = newEmpregado;
+$e2->setprimeironome("José");
+$e2->setsobrenome("X");
+$e2->setsalariomen(900,00);
+
+echo "O salário mensal de ", $e1->getprimeironome(), ;??????????????
+echo $e1->getprimeironome();
+echo "";
+echo $cr->getano();
+echo "\n";
+echo $cr->getcor();
 ?>
