@@ -21,8 +21,9 @@ class Empregado{
   public $primeironome;
   public $sobrenome;
   public $salariomen;
+  public $salarioanual;
   
-public function__construct($primeironome, $sobrenome, $salariomen){
+public function __construct($primeironome, $sobrenome, $salariomen){
   $this->primeironome=$primeironome;
   $this->sobrenome=$sobrenome;
   $this->salariomen=$salariomen;
@@ -40,33 +41,50 @@ public function setsalariomen($salariomen){
     $this->salariomen=$salariomen;
   }
   
+public function setsalarioanual(){
+    return $this->salarioanual = $this->salariomen*12;
+}
+
 public function getprimeironome(){
-  $this->primeironome;
+  return $this->primeironome;
   }
 
 public function getsobrenome(){
-  $this->sobrenome;
+  return $this->sobrenome;
   }
   
 public function getsalariomen(){
-  $this->salariomen;
+  return $this->salariomen;
   }
+
+  
+public function getsalarioanual(){
+  return $this->salarioanual;
+  }
+ 
+ public function validasalariomen(){
+    if($this->salariomen < 0){
+      $this->salariomen = 0.0;
+    }
+  }
+  
+  public function aumento(){
+  $dezporc = $this->salariomen*0.10;
+  $this->salariomen = $this->salariomen + $dezporc;
+	}
+
 }
 
-$e1 = newEmpregado;
-$e1->setprimeironome("Maria");
-$e1->setsobrenome("Y");
-$e1->setsalariomen(1000,00);
+$e1 = new Empregado("Maria", "dos Santos", 1500,00);
+$e2 = new Empregado("José", "Oliveira", 1000,00);
 
-$e2 = newEmpregado;
-$e2->setprimeironome("José");
-$e2->setsobrenome("X");
-$e2->setsalariomen(900,00);
 
-echo "O salário mensal de ", $e1->getprimeironome(), ;??????????????
-echo $e1->getprimeironome();
-echo "";
-echo $cr->getano();
-echo "\n";
-echo $cr->getcor();
+echo "\n O salário anual de {$e1->getprimeironome()} {$e1->getsobrenome()} equivale a {$e1->getsalarioanual()}";
+echo "\n O salário anual de {$e2->getprimeironome()} {$e2->getsobrenome()} equivale a {$e2->getsalarioanual()}";
+$e1 -> aumento();
+$e1->setsalarioanual();
+$e2 -> aumento();
+$e2->setsalarioanual();
+echo "\n O salário anual de {$e1->getprimeironome()} {$e1->getsobrenome()} após um aumento de 10% equivale a {$e1->getsalarioanual()}";
+echo "\n O salário anual de {$e2->getprimeironome()} {$e2->getsobrenome()} após um aumento de 10% equivale a {$e2->getsalarioanual()}";
 ?>
