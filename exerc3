@@ -1,0 +1,54 @@
+<-- (exerc3) Para cada produto informado (nome, preço e quantidade),
+escreva o nome do produto comprado e o valor total a ser pago,
+considerando que são oferecidos descontos pelo número de
+unidades compradas, segundo a tabela abaixo:
+• Até 10 unidades: valor total
+• de 11 a 20 unidades: 10% de desconto
+• de 21 a 50 unidades: 20% de desconto
+• acima de 50 unidades: 25% de desconto -->
+
+
+<?php
+
+class Produto{
+  public $nome;
+  public $preco;
+  public $qtd;
+  public $desc;
+  public $valor;
+  
+  
+  public function Produto($nome, $preco, $qtd){
+    $this->nome = $nome;
+    $this->preco = $preco;
+    $this->qtd = $qtd;
+    $this->valor = $this->preco * $this->qtd;
+    
+      if($this-> qtd>=11 and $this->qtd<=20){
+        $this->desc = "10%";
+        $desc = ($this->valor*10)/100;
+        $this->valor=$this->valor-$desc;
+         }elseif($this-> qtd>=21 and $this->qtd<=50){
+        $this->desc="20%";
+        $desc = ($this->valor*20)/100;
+        $this->valor=$this->valor-$desc;
+        } elseif($this->qtd>50){
+          $this->desc="25%";
+          $desc=($this->valor*25)/100;
+          $this->valor = $this->valor-$desc;
+      }else{
+        $this->desc = 0;
+      }
+  }
+
+}
+$prod1 = new Produto("lápis", 1.00, 12);
+  print_r($prod1);
+
+$prod2 = new Produto("borracha", 0.50, 40);
+   print_r($prod2);
+
+$prod3 = new Produto("caderno", 10.00, 7);
+   print_r($prod3);
+
+?>
